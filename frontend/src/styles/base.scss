@@ -1,0 +1,10 @@
+*,
+*::before,
+*::after {
+  transition: all 130ms linear;
+  @apply m-0 p-0 box-border;
+}
+
+body {
+  @apply font-display dark:bg-slate-900 overflow-hidden;
+}

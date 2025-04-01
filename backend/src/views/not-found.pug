@@ -1,0 +1,12 @@
+extends _layout
+
+block variables
+  - var title = "404 | Resource not found"
+
+block content
+    div(class='main-container')
+        section(class="content-container")
+            h1(class="content-title text-red-600 dark:text-red-500 font-medium") 404!
+            p(class="content-body after:bg-red-600")
+                | The resource you're looking for was not found on this server. It may have been moved or deleted, or
+                | the request URL may be incorrect. Please verify the endpoint or contact support for assistance.
