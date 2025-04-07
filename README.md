@@ -1,4 +1,4 @@
-# Docket - Notes Management Application
+# Docket | Notes Management Application
 
 Docket is a responsive and user-friendly notes management application that allows users to create, read, update, and delete notes securely. The application features both a **frontend** built with **React.js**, **Redux**, and **TailwindCSS**, and a **backend** powered by **Node.js**, **Express.js**, and **MongoDB**.
 
