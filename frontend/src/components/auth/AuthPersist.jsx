@@ -19,6 +19,7 @@ const AuthPersist = () => {
       await dispatch(fetchNotesQuery()).unwrap();
       dispatch(hideToast());
     } catch (err) {
+      dispatch(hideToast());
     } finally {
       setSuccess(true);
     }
@@ -28,13 +29,14 @@ const AuthPersist = () => {
     refreshAuthTokenAndFetchData();
   }, []);
 
-  if (!success) return (
-    <section className="main-container">
-      <div className="flex-center pt-20">
-        <Spinner />
-      </div>
-    </section>
-  );
+  if (!success)
+    return (
+      <section className="main-container">
+        <div className="flex-center pt-20">
+          <Spinner />
+        </div>
+      </section>
+    );
 
   return <Outlet />;
 };
