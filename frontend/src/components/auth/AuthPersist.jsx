@@ -32,7 +32,7 @@ const AuthPersist = () => {
   if (!success)
     return (
       <section className="main-container">
-        <div className="flex-center pt-20">
+        <div className="size-full flex-center pt-20">
           <Spinner />
         </div>
       </section>

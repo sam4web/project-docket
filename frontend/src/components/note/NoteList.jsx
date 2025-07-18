@@ -12,7 +12,6 @@ import NoteItem from "@/components/note/NoteItem.jsx";
 import ErrorText from "@/components/common/ErrorText.jsx";
 import { selectCurrentToken } from "@/features/user/userSlice.js";
 
-
 const NoteList = () => {
   const navigate = useNavigate();
   const token = useSelector(selectCurrentToken);
@@ -24,7 +23,7 @@ const NoteList = () => {
 
   if (status === "loading")
     return (
-      <section className="flex-center pt-20">
+      <section className="size-full flex-center pt-20">
         <Spinner />
       </section>
     );
@@ -37,7 +36,8 @@ const NoteList = () => {
         </h2>
         <button
           className="btn text-lg px-5 py-2.5"
-          onClick={() => navigate("/notes/create")}>
+          onClick={() => navigate("/notes/create")}
+        >
           Create Note
         </button>
       </section>
@@ -53,7 +53,10 @@ const NoteList = () => {
         </h2>
         <button
           className="btn text-lg px-5 py-2.5"
-          onClick={() => navigate("/notes/create", { state: { title: searchQuery } })}>
+          onClick={() =>
+            navigate("/notes/create", { state: { title: searchQuery } })
+          }
+        >
           Create Note
         </button>
       </section>
@@ -63,14 +66,9 @@ const NoteList = () => {
     <section className="space-y-6">
       <h1 className="text-4xl text-responsive font-semibold">Notes</h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 cursor-pointer">
-        {searchedNotes.length && searchQuery ?
-          searchedNotes.map(({ _id }) => (
-            <NoteItem noteId={_id} key={_id} />
-          )) :
-          notes.map(({ _id }) => (
-            <NoteItem noteId={_id} key={_id} />
-          ))
-        }
+        {searchedNotes.length && searchQuery
+          ? searchedNotes.map(({ _id }) => <NoteItem noteId={_id} key={_id} />)
+          : notes.map(({ _id }) => <NoteItem noteId={_id} key={_id} />)}
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ const NoteDetail = () => {
 
   if (loading)
     return (
-      <section className="flex-center pt-20">
+      <section className="size-full flex-center pt-20">
         <Spinner />
       </section>
     );
